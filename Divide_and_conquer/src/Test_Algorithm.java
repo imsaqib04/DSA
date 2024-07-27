@@ -4,11 +4,16 @@ public class Test_Algorithm {
 
         int arr[] = {2, 5, 1, 66, 55, 6, 17, 8};
 
+        int x = LinearSearch.searching ( arr,66 );
 
-        Straight_Max_Min.MinMax result = Straight_Max_Min.maxminelement ( arr );
+        System.out.println (x);
 
-        System.out.println (result.max);
-        System.out.println (result.min);
+
+
+//        Straight_Max_Min.MinMax result = Straight_Max_Min.maxminelement ( arr );
+//
+//        System.out.println (result.max);
+//        System.out.println (result.min);
     }
 
 }
