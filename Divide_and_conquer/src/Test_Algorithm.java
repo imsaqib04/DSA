@@ -4,8 +4,20 @@ public class Test_Algorithm {
 
         int arr[] = {2, 5, 1, 66, 55, 6, 17, 8};
 
-        int x = Power.pow ( 10,3 );
-        System.out.println (x);
+        int i = 0;
+        int j = 7;
+        MinMax.Min1Max1 mm = MinMax.Max_Min ( arr, i, j );
+        System.out.println ( mm.max );
+        System.out.println ( mm.min );
+    }
+
+}
+
+
+
+
+//        int x = Power.pow ( 10,3 );
+//        System.out.println (x);
 
 
 
@@ -26,6 +38,4 @@ public class Test_Algorithm {
 //
 //        System.out.println (result.max);
 //        System.out.println (result.min);
-    }
 
-}
