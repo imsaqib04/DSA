@@ -4,11 +4,27 @@ public class Test_Algorithm {
 
         int arr[] = {2, 5, 1, 66, 55, 6, 17, 8};
 
-        int i = 0;
-        int j = 7;
-        MinMax.Min1Max1 mm = MinMax.Min_Max ( arr, i, j );
-        System.out.println ( mm.max );
-        System.out.println ( mm.min );
+
+        MergeSort ms = new MergeSort ();
+
+        MergeSort.MS ( arr,0,arr.length-1 );
+
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+
+
+
+
+
+
+
+
+//        int i = 0;
+//        int j = 7;
+//        MinMax.Min1Max1 mm = MinMax.Min_Max ( arr, i, j );
+//        System.out.println ( mm.max );
+//        System.out.println ( mm.min );
     }
 
 }
