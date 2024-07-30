@@ -6,7 +6,7 @@ public class Test_Algorithm {
 
         int i = 0;
         int j = 7;
-        MinMax.Min1Max1 mm = MinMax.Max_Min ( arr, i, j );
+        MinMax.Min1Max1 mm = MinMax.Min_Max ( arr, i, j );
         System.out.println ( mm.max );
         System.out.println ( mm.min );
     }
