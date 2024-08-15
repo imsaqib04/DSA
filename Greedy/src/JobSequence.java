@@ -1,68 +1,69 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 
-class Job {
-        char id;
+public class JobSequence {
+
+    static class Job implements Comparable<Job>{
+
+        String name;
         int deadline;
         int profit;
 
+        @Override
+        public int compareTo(Job otherJob) {
+            return otherJob.profit - this.profit;
+        }
 
-        Job(char id, int deadline, int profit) {
-            this.id = id;
+        public Job(String name, int deadline, int profit) {
+            this.name = name;
             this.deadline = deadline;
             this.profit = profit;
         }
     }
 
-class JobSequence {
+    public void findJobSequence(ArrayList<Job> jobs){
 
-        static void JobScheduling(Job[] jobs, int n) {
+        Collections.sort(jobs);
 
-        Arrays.sort(jobs, (a, b) -> b.profit - a.profit);
+        int totalJobs= jobs.size();
+        boolean[] slots = new boolean[totalJobs];
+        int[] sequence = new int[totalJobs];
 
-        int maxDeadline = 0;
-
-            for (int i = 0; i < jobs.length; i++) {
-                if (jobs[i].deadline > maxDeadline) {
-                    maxDeadline = jobs[i].deadline;
-                }
-            }
-
-
-        int[] slots = new int[maxDeadline];
-        Arrays.fill(slots, -1);
-
-
-        for (Job job : jobs) {
-            for (int j = job.deadline - 1; j >= 0; j--) {
-                if (slots[j] == -1) {
-                    slots[j] = job.id;
+        for (int i = 0; i < totalJobs; i++) {
+            for (int j = jobs.get(i).deadline - 1; j >= 0; j--) {
+                if (!slots[j]) {
+                    sequence[j] = i;
+                    slots[j] = true;
                     break;
                 }
             }
         }
-
-        // Print the sequence
-        System.out.print("Job Sequence: ");
-        for (int i = 0; i < maxDeadline; i++) {
-            if (slots[i] != -1) {
-                System.out.print(slots[i] + " ");
+        System.out.print("Jobs: ");
+        int totalProfit=0;
+        for (int i = 0; i < jobs.size(); i++) {
+            if (slots[i]){
+                System.out.print(jobs.get(sequence[i]).name + " ");
+                totalProfit += jobs.get(sequence[i]).profit;
             }
         }
+        System.out.println(", Total Profit: " + totalProfit);
     }
 
-        public static void main(String args[]) {
-            Job[] arr = {
-                    new Job ( 'a', 2, 100 ),
-                    new Job ( 'b', 1, 19 ),
-                    new Job ( 'c', 2, 27 ),
-                    new Job ( 'd', 1, 25 ),
-                    new Job ( 'e', 3, 15 )
-            };
+    public static void main(String[] args) {
+        Job a = new Job("A", 2, 102);
+        Job b = new Job("B", 1, 94);
+        Job c = new Job("C", 2, 220);
+        Job d = new Job("D", 3, 50);
+        Job e = new Job("E", 3, 15);
 
-            int n = arr.length;
+        ArrayList<Job> jobs = new ArrayList<>();
+        jobs.add(a);
+        jobs.add(b);
+        jobs.add(c);
+        jobs.add(d);
+        jobs.add(e);
 
-            JobSequence jobSequence = new JobSequence ();
-            jobSequence.JobScheduling ( arr, n );
-
-        }
+        JobSequence jobSequencing = new JobSequence ();
+        jobSequencing.findJobSequence(jobs);
+    }
 }
