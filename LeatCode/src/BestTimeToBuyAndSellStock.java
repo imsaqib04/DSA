@@ -2,16 +2,29 @@ public class BestTimeToBuyAndSellStock {
 
     public int maxProfit(int[] prices) {
 
-        int maxProfit = 0;
-        int minSofar = prices[0];
+//        int maxProfit = 0;
 
-        for (int i=0;i<prices.length;i++){
-            minSofar = Math.min ( minSofar,prices[i]);
-            int profit = prices[i]-minSofar;
-            maxProfit = Math.max ( maxProfit,profit );
+        int maxPro = 0;
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                if (prices[j] > prices[i]) {
+                    maxPro = Math.max(prices[j] - prices[i], maxPro);
+                }
+            }
         }
-        System.out.println (maxProfit);
-        return maxProfit;
+        System.out.println (maxPro);
+        return maxPro;
+//
+//        int maxProfit = 0;
+//        int minSofar = prices[0];
+//
+//        for (int i=0;i<prices.length;i++){
+//            minSofar = Math.min ( minSofar,prices[i]);
+//            int profit = prices[i]-minSofar;
+//            maxProfit = Math.max ( maxProfit,profit );
+//        }
+//        System.out.println (maxProfit);
+//        return maxProfit;
     }
 
     public static void main(String[] args) {
