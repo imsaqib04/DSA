@@ -3,14 +3,14 @@ public class MinHeap {
     public static void insert(int arr[], int size, int value) {
 
         size = size + 1;
-        arr[size-1] = value;    // arr[0] = value given by me or input
+        arr[size-1] = value;
         int index = size-1;
 
         while (index > 0) {
             int parent = index / 2;
             if (arr[parent] > arr[index]) {
                 swap ( arr, index, parent );
-                index = parent;
+//                index = parent;
             }
             else{
                 return;
@@ -18,10 +18,10 @@ public class MinHeap {
         }
     }
 
-    public static void swap(int[] arr, int index, int index2) {
+    public static void swap(int[] arr, int index, int parent) {
         int temp = arr[index];
-        arr[index] = arr[index2];
-        arr[index2] = temp;
+        arr[index] = arr[parent];
+        arr[parent] = temp;
     }
 
     public static void main(String[] args) {
