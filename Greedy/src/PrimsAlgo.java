@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-class Edge implements Comparable<Edge>{
+public class Edge implements Comparable<Edge>{
     int wt;
     int source;
     int dest;
