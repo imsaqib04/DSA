@@ -128,7 +128,7 @@ public class BST {
 
         mybst.postordertraverse ( mybst.root );       //postorder
 
-        mybst.breadthFirstTraversal ( mybst.root );   //BFS
+        mybst.breadthFirstTraversal ( mybst.root );   //BFS (level order traversal)
 
         mybst.depthFirstSearch ( mybst.root );        //DFS
 
