@@ -22,7 +22,7 @@ public class DiameterOfBTree {
          return diameter;     //nodes = edge +1;
      }
 
-     int height(TreeNode node) {
+     int height(TreeNode node) {           //height of BT
 
          if (node == null) {
              return 0;
