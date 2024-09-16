@@ -1,7 +1,7 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class KClosetPoint {
+class KClosestPoints {
     // Function to find the K closest points
     public int[][] kClosest(int[][] points, int K) {
         // Create a priority queue with a custom comparator to compare the distances
@@ -38,7 +38,7 @@ class KClosetPoint {
 
     // Driver code for testing
     public static void main(String[] args) {
-        KClosetPoint sol = new KClosetPoint ();
+        KClosestPoints sol = new KClosestPoints ();
 
         int[][] points = { {1, 3}, {-2, 2}, {5, 8}, {0, 1} };
         int K = 2;
