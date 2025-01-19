@@ -27,7 +27,9 @@ public class BestTimeToBuyAndSellStock {
 
     public static void main(String[] args) {
 
-       int  prices [] = {2,3,1,4,7,8};
+//       int  prices [] = {2,3,1,4,7,8};
+        int  prices [] = {3,3,5,0,0,3,1,4};
+
         BestTimeToBuyAndSellStock bt = new BestTimeToBuyAndSellStock ();
         bt.maxProfit ( prices );
     }
