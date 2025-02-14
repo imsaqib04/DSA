@@ -12,8 +12,8 @@ class LongestSubString {
             char c = s.charAt ( i );
 
             if(hm.containsKey ( c )){
-                start = Math.max(hm.get(c)+1,start);
-
+                start = Math.max(hm.get(c)+1,start);   // We update start to skip past the last occurrence of this character.
+                                                       // start = Math.max(hm.get(c) + 1, start) ensures start never moves backward.
             }
             else{
                 hm.put(c,i);

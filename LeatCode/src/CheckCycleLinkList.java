@@ -17,6 +17,7 @@ public class CheckCycleLinkList {
             return false;
         }
 
+        // slow and fast pointer easily solved
         ListNode L1 = head;
         ListNode L2 = head;
 
