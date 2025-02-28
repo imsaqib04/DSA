@@ -19,12 +19,10 @@ public class ReverseLinkList {
 
         while (head != null) {
 
-            curr = head.next;
-            head.next = prev;
-            prev = head;
-
-            head = curr;
-
+            curr = head.next;   // pointing to next node current
+            head.next = prev;  // null for linking break here we use this  in 2nd iteration (1<-2)
+            prev = head;       // store value head in the prev
+            head = curr;       // and assign head to current node
         }
 
         return prev;
