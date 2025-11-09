@@ -13,7 +13,7 @@ class MajorityElement2 {
             if (num == candidate1) {
                 count1++;
             } else if (num == candidate2) {
-                count2++;c
+                count2++;
             } else if (count1 == 0) {
                 candidate1 = num;
                 count1 = 1;
