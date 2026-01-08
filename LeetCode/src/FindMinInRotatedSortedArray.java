@@ -25,6 +25,6 @@ class FindMinInRotatedSortedArray {
         }
 
         // left == right → minimum found
-        return nums[left];
+        return nums[left];   // you can use also right
     }
 }

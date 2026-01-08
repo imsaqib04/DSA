@@ -25,18 +25,28 @@ public class RotateArray {
 
 //class Solution {
 //    public void rotate(int[] nums, int k) {
+//        int n = nums.length;
+//        k = k % n; // handle if k > n
 //
-//        int arr[] = new int [nums.length];
+//        int[] arr = new int[n];
 //
-//        for(int i = 0;i <nums.length; i++){
-//            arr[(i + k) % nums.length] = nums[i];
+//        // move last k elements to the beginning
+//        for (int i = 0; i < k; i++) {
+//            arr[i] = nums[n - k + i];
 //        }
 //
-//        for (int i = 0; i < nums.length; i++) {
+//        // move first n-k elements after them
+//        for (int i = k; i < n; i++) {
+//            arr[i] = nums[i - k];
+//        }
+//
+//        // copy back to original array
+//        for (int i = 0; i < n; i++) {
 //            nums[i] = arr[i];
 //        }
 //    }
 //}
+
 
 
 //class Solution {
