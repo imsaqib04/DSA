@@ -1,7 +1,7 @@
 class MinimumCost {
     public int minimumCost(int[] nums) {
 
-        int n = nums.length;
+    /*    int n = nums.length;
         int ans = Integer.MAX_VALUE;
 
         for(int i = 1;i<n-1;i++){
@@ -15,6 +15,25 @@ class MinimumCost {
 
         }
 
-        return ans;
+        return ans; */
+
+        int n= nums.length;
+
+        int fristNum = nums[0];
+        int min1  = Integer.MAX_VALUE;
+        int min2 = Integer.MAX_VALUE;
+
+        for(int i = 1; i<n; i++){
+
+            if(nums[i]<min1){
+                min2 = min1;
+                min1 = nums[i];
+            }
+            else if(nums[i]<min2){
+                min2 = nums[i];
+            }
+        }
+
+        return fristNum + min1 +min2;
     }
 }
