@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+//Sieve of Eratosthenes.
 class countPrimes {
     public int countPrimes(int n) {
         if (n <= 2) return 0;
